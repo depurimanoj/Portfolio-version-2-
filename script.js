@@ -1,10 +1,4 @@
 
-const clock=document.querySelector('#clock');
-function updateClock(){
-  clock.textContent=new Intl.DateTimeFormat('en-US',{timeZone:'America/New_York',hour:'2-digit',minute:'2-digit',hour12:true}).format(new Date()).replace(':',' ').toUpperCase();
-}
-updateClock(); setInterval(updateClock,30000);
-
 const revealObserver=new IntersectionObserver((entries)=>{
   entries.forEach(entry=>{if(entry.isIntersecting) entry.target.classList.add('show')});
 },{threshold:.08});
